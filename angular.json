@@ -28,7 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
             "scripts": []
           },
@@ -124,6 +127,42 @@
           }
         }
       }
-    }},
+    },
+    "graphic": {
+      "projectType": "library",
+      "root": "projects/graphic",
+      "sourceRoot": "projects/graphic/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/graphic/tsconfig.lib.json",
+            "project": "projects/graphic/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/graphic/src/test.ts",
+            "tsConfig": "projects/graphic/tsconfig.spec.json",
+            "karmaConfig": "projects/graphic/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/graphic/tsconfig.lib.json",
+              "projects/graphic/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "crm-paris-dec"
 }
