@@ -1,0 +1,12 @@
+@import 'theme';
+@import 'fonts';
+
+h1 {
+  font-size: $h3-fontsize;
+  color: $color1;
+  text-align: center;
+
+  img {
+    width: 60px;
+  }
+}

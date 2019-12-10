@@ -1,0 +1,9 @@
+@import 'theme';
+
+a {
+  color: $light-color;
+  transition: all .5s;
+  &:hover, .active {
+    color: $color1;
+  }
+}
