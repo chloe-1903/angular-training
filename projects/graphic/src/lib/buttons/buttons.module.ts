@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ButtonTestComponent } from './button-test/button-test.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ButtonTestComponent],
   imports: [
     CommonModule
   ]

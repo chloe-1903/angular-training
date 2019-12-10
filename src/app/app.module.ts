@@ -17,8 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     UiModule,
     LoginModule,
-    NgbModule.forRoot(),
-    FontAwesomeModule
+    NgbModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
