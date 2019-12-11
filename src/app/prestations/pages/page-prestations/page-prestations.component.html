@@ -11,8 +11,8 @@
         <td>{{prestation.client}}</td>
         <td>{{prestation.nbJours}}</td>
         <td>{{prestation.tjmht | currency:'EUR'}}</td>
-        <td>{{prestation.totalHt() | currency:'EUR'}}</td>
-        <td>{{prestation.totalTtc() | currency:'EUR'}}</td>
+        <td>{{prestation | total | currency:'EUR'}}</td>
+        <td>{{prestation | total: true  | currency:'EUR'}}</td>
         <td>{{prestation.state}}</td>
       </tr>
     </tbody>
