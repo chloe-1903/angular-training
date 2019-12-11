@@ -17,6 +17,8 @@ export class PagePrestationsComponent implements OnInit {
   public states = State;
   // for Angular 5- :
   // public states = Object.values(State);
+  public title = 'Prestations';
+  public subtitle = 'Toutes les prestations';
 
   constructor(private ps: PrestationsService) { }
 

@@ -1,17 +1,21 @@
-<app-tableau-dark [headers]="headers">
-  <!-- projection dans ng-content de app-tableau-->
-  <tr *ngFor="let prestation of collection">
-    <td>{{prestation.typePresta}}</td>
-    <td>{{prestation.client}}</td>
-    <td>{{prestation.nbJours}}</td>
-    <td>{{prestation.tjmht | currency:'EUR'}}</td>
-    <td>{{prestation | total | currency:'EUR'}}</td>
-    <td>{{prestation | total: true  | currency:'EUR'}}</td>
-    <td [appState]="prestation.state">
-      <select (change)="changeState(prestation, $event)">
-        <option *ngFor="let state of states | keyvalue" [value]="state.value"
-          [selected]="state.value === prestation.state">{{state.value}}</option>
-      </select>
-    </td>
-  </tr>
-</app-tableau-dark>
+<app-template-a title="title" subtitle="subtitle">
+  <app-tableau-light [headers]="headers">
+    <!-- projection dans ng-content de app-tableau-->
+    <tr *ngFor="let prestation of collection">
+      <td>{{prestation.typePresta}}</td>
+      <td>{{prestation.client}}</td>
+      <td>{{prestation.nbJours}}</td>
+      <td>{{prestation.tjmht | currency:'EUR'}}</td>
+      <td>{{prestation | total | currency:'EUR'}}</td>
+      <td>{{prestation | total: true  | currency:'EUR'}}</td>
+      <td [appState]="prestation.state">
+        <select (change)="changeState(prestation, $event)">
+          <option *ngFor="let state of states | keyvalue" [value]="state.value"
+            [selected]="state.value === prestation.state">{{state.value}}</option>
+        </select>
+      </td>
+    </tr>
+  </app-tableau-light>
+</app-template-a>
+
+

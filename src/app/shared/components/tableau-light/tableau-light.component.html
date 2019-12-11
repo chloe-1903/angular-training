@@ -1,13 +1,13 @@
 <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th *ngFor="let col of headers" scope="col">{{col}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- projection : transclusion -->
-        <ng-content></ng-content>
-      </tbody>
-    </table>
-  </div>
+  <table class="table" id="table-light">
+    <thead>
+      <tr>
+        <th *ngFor="let col of headers" scope="col">{{col}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- projection : transclusion -->
+      <ng-content></ng-content>
+    </tbody>
+  </table>
+</div>

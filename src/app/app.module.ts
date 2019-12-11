@@ -9,6 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { TemplateAComponent } from './templates/template-a/template-a.component';
+import { TemplateBComponent } from './templates/template-b/template-b.component';
 
 // add new FR local
 registerLocaleData(localeFr, 'fr');

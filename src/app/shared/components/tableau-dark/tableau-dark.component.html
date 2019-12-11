@@ -1,13 +1,14 @@
 <div class="table-responsive">
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th *ngFor="let col of headers" scope="col">{{col}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- projection : transclusion -->
-        <ng-content></ng-content>
-      </tbody>
-    </table>
-  </div>
+  <!-- we could have used ngClass here instead of creating another component because it is the same code as tableau-light component -->
+  <table class="table table-dark" id="table-dark">
+    <thead>
+      <tr>
+        <th *ngFor="let col of headers" scope="col">{{col}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- projection : transclusion -->
+      <ng-content></ng-content>
+    </tbody>
+  </table>
+</div>

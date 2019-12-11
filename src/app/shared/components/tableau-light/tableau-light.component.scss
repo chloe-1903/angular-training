@@ -1,0 +1,14 @@
+@import 'theme';
+
+#table-light {
+  //very heavy selector (110pts) to avoind someone to overwrite this css
+  .state-annule {
+    background: $color-error;
+  }
+  .state-option {
+    background: $color1;
+  }
+  .state-confirme {
+    background: $color-success;
+  }
+}
