@@ -7,7 +7,7 @@
       "nbJours": 10,
       "tva": 20,
       "tjmht": 800,
-      "state": "Confirmé"
+      "state": "Option"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "nbJours": 15,
       "tva": 20,
       "tjmht": 900,
-      "state": "Confirmé"
+      "state": "Annulé"
     }
   ],
   "clients": [

@@ -21,7 +21,6 @@ export class PagePrestationsComponent implements OnInit {
   constructor(private ps: PrestationsService) { }
 
   public changeState(item: Prestation, event) {
-    // console.log(event.target.value);
     this.ps.update(item, event.target.value).subscribe((response: Prestation) => {
       item.state = response.state;
     });
