@@ -11,14 +11,15 @@ import { Prestation } from 'src/app/shared/models/prestation';
 export class PagePrestationsComponent implements OnInit {
   public collection$: Observable<Prestation[]>;
   public collection: Prestation[];
+  public headers: string[];
 
   constructor(private ps: PrestationsService) { }
 
   ngOnInit() {
     this.ps.collection.subscribe((col) => {
       this.collection = col;
-      console.log(this.collection);
     });
+    this.headers = ['Type', 'Client', 'Nombre de jours', 'Taux journalier HT', 'Total HT', 'Total TTC', 'Statut'];
   }
 
 }
