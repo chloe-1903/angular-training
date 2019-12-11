@@ -6,6 +6,7 @@ import { LoginModule } from './login/login.module';
 import { UiModule } from './ui/ui.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     UiModule,
     LoginModule,
     NgbModule,

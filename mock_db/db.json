@@ -1,0 +1,9 @@
+{
+  "prestations": [
+    { "id": 1, "typePresta": "formation", "client": "Modis", "nbJours": 10, "tva": 20, "tjmht": 800, "state": "Option" },
+    { "id": 2, "typePresta": "coaching", "client": "Capgemini", "nbJours": 15, "tva": 20, "tjmht": 900, "state": "Confirmé" }
+  ],
+  "clients": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ]
+}

@@ -1,1 +1,26 @@
-<p>page-prestations works!</p>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Client</th>
+        <th scope="col">Nombre de jours</th>
+        <th scope="col">Taux journalier HT</th>
+        <th scope="col">Total HT</th>
+        <th scope="col">Total TTC</th>
+        <th scope="col">Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prestation of collection">
+        <td>{{prestation.typePresta}}</td>
+        <td>{{prestation.client}}</td>
+        <td>{{prestation.nbJours}}</td>
+        <td>{{prestation.tjmht}}</td>
+        <td>{{prestation.totalHt()}}</td>
+        <td>{{prestation.totalTtc()}}</td>
+        <td>{{prestation.state}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
