@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { map } from 'rxjs/operators';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,11 @@ export class PrestationsService {
 
   public set collection(col: Observable<any>) {
     this.collection$ = col;
+  }
+
+  public update(prestation: Prestation, state: State): Observable<any> {
+    const obj = {...prestation}; // destructuring to avoid modifying prestation.state
+    obj.state = state;
+    return this.http.patch(`${this.urlApi}prestations/${obj.id}`, obj);
   }
 }

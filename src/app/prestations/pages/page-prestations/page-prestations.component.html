@@ -13,7 +13,11 @@
         <td>{{prestation.tjmht | currency:'EUR'}}</td>
         <td>{{prestation | total | currency:'EUR'}}</td>
         <td>{{prestation | total: true  | currency:'EUR'}}</td>
-        <td>{{prestation.state}}</td>
+        <td>
+          <select (change)="changeState(prestation, $event)">
+            <option *ngFor="let state of states | keyvalue" [value]="state.value" [selected]="state.value === prestation.state">{{state.value}}</option>
+          </select>
+        </td>
       </tr>
     </tbody>
   </table>
