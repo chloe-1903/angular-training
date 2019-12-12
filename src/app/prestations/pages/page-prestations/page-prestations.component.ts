@@ -19,6 +19,9 @@ export class PagePrestationsComponent implements OnInit {
   // public states = Object.values(State);
   public title = 'Prestations';
   public subtitle = 'Toutes les prestations';
+  public addBtnLabel = 'Nouvelle prestation';
+  public addPrestationPath = 'add';
+  // not '/add' because it would give http://localhost:4200/add and not http://localhost:4200/prestations/add
 
   constructor(private ps: PrestationsService) { }
 
