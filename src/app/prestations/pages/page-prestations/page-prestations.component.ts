@@ -3,6 +3,7 @@ import { PrestationsService } from '../../services/prestations.service';
 import { Observable, Subscription } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-prestations',
@@ -17,8 +18,8 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   public states = State;
   // for Angular 5- :
   // public states = Object.values(State);
-  public title = 'Prestations';
-  public subtitle = 'Toutes les prestations';
+  public title: string;
+  public subtitle: string;
   public addBtnLabel = 'Nouvelle prestation';
   public addPrestationPath = 'add';
   // not '/add' because it would give http://localhost:4200/add and not http://localhost:4200/prestations/add
@@ -26,7 +27,7 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   // private subscription: Subscription;
 
 
-  constructor(private ps: PrestationsService) { }
+  constructor(private ps: PrestationsService, private activatedRoute: ActivatedRoute) { }
 
   public changeState(item: Prestation, event) {
     this.ps.update(item, event.target.value).subscribe((response: Prestation) => {
@@ -45,6 +46,10 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
     }); */
     this.collection$ = this.ps.collection;
     this.headers = ['Type', 'Client', 'Nombre de jours', 'Taux journalier HT', 'Total HT', 'Total TTC', 'Statut'];
+    this.activatedRoute.data.subscribe((flux) => {
+      this.title = flux.title;
+      this.subtitle = flux.subtitle;
+    });
   }
 
   ngOnDestroy() {
