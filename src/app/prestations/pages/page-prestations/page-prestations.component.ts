@@ -22,6 +22,8 @@ export class PagePrestationsComponent implements OnInit {
   public addBtnLabel = 'Nouvelle prestation';
   public addPrestationPath = 'add';
   // not '/add' because it would give http://localhost:4200/add and not http://localhost:4200/prestations/add
+  public action = 'Open pop-in';
+
 
   constructor(private ps: PrestationsService) { }
 
@@ -29,6 +31,11 @@ export class PagePrestationsComponent implements OnInit {
     this.ps.update(item, event.target.value).subscribe((response: Prestation) => {
       item.state = response.state;
     });
+  }
+
+  public popIn() {
+    console.log('generate pop-in with a service');
+    // we could use a service displaying a ng-bootstrap pop-in here
   }
 
   ngOnInit() {
