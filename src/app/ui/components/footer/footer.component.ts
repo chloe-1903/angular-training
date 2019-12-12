@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  public copyright: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.copyright = 'Copyright 2019 Chloé';
   }
 
 }

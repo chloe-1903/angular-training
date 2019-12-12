@@ -17,6 +17,24 @@
       "tva": 20,
       "tjmht": 900,
       "state": "Option"
+    },
+    {
+      "typePresta": null,
+      "nbJours": 80,
+      "tva": 20,
+      "tjmht": 1200,
+      "client": "new client",
+      "state": "Confirmé",
+      "id": 3
+    },
+    {
+      "typePresta": "ezfze",
+      "nbJours": 555,
+      "tva": 20,
+      "tjmht": 1500,
+      "client": "efzefz",
+      "state": "Option",
+      "id": 4
     }
   ],
   "clients": [

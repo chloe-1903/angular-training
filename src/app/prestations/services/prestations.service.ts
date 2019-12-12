@@ -25,6 +25,11 @@ export class PrestationsService {
     );
   }
 
+  public add(item): Observable<any> {
+    // item is already a json object
+    return this.http.post(`${this.urlApi}prestations`, item);
+  }
+
   public get collection(): Observable<any> {
     return this.collection$;
   }
