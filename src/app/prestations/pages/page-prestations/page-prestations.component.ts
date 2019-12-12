@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
 
@@ -9,7 +9,7 @@ import { State } from 'src/app/shared/enums/state.enum';
   templateUrl: './page-prestations.component.html',
   styleUrls: ['./page-prestations.component.scss']
 })
-export class PagePrestationsComponent implements OnInit {
+export class PagePrestationsComponent implements OnInit, OnDestroy {
   public collection$: Observable<Prestation[]>;
   public collection: Prestation[];
   public headers: string[];
@@ -23,6 +23,7 @@ export class PagePrestationsComponent implements OnInit {
   public addPrestationPath = 'add';
   // not '/add' because it would give http://localhost:4200/add and not http://localhost:4200/prestations/add
   public action = 'Open pop-in';
+  private subscription: Subscription;
 
 
   constructor(private ps: PrestationsService) { }
@@ -39,10 +40,15 @@ export class PagePrestationsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ps.collection.subscribe((col) => {
+    this.subscription = this.ps.collection.subscribe((col) => {
       this.collection = col;
     });
     this.headers = ['Type', 'Client', 'Nombre de jours', 'Taux journalier HT', 'Total HT', 'Total TTC', 'Statut'];
+  }
+
+  ngOnDestroy() {
+    // not usefull here, because it's allready in HttpClient (it is an example):
+    this.subscription.unsubscribe();
   }
 
 }
