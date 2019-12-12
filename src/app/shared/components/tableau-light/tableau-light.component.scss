@@ -12,3 +12,10 @@
     background: $color-success;
   }
 }
+
+// that works because we disabled shadow DOM
+app-template-a #table-light {
+  .state-option {
+    background: $color3;
+  }
+}

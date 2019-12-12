@@ -1,4 +1,4 @@
-<app-template-a title="title" subtitle="subtitle">
+<app-template-a [title]="title" [subtitle]="subtitle">
   <app-tableau-light [headers]="headers">
     <!-- projection dans ng-content de app-tableau-->
     <tr *ngFor="let prestation of collection">
