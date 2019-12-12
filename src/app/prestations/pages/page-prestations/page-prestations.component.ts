@@ -23,7 +23,7 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   public addPrestationPath = 'add';
   // not '/add' because it would give http://localhost:4200/add and not http://localhost:4200/prestations/add
   public action = 'Open pop-in';
-  private subscription: Subscription;
+  // private subscription: Subscription;
 
 
   constructor(private ps: PrestationsService) { }
@@ -40,15 +40,16 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.ps.collection.subscribe((col) => {
+    /* this.subscription = this.ps.collection.subscribe((col) => {
       this.collection = col;
-    });
+    }); */
+    this.collection$ = this.ps.collection;
     this.headers = ['Type', 'Client', 'Nombre de jours', 'Taux journalier HT', 'Total HT', 'Total TTC', 'Statut'];
   }
 
   ngOnDestroy() {
     // not usefull here, because it's allready in HttpClient (it is an example):
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 }
