@@ -22,8 +22,21 @@
   "clients": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "chloé",
+      "email": "chloe@tom.com",
+      "state": "actif"
+    },
+    {
+      "id": 2,
+      "name": "goerge",
+      "email": "goerge@tom.com",
+      "state": "Inactif"
+    },
+    {
+      "id": 3,
+      "name": "clotilde",
+      "email": "clot@tom.com",
+      "state": "inactif"
     }
   ]
 }

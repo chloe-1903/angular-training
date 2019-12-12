@@ -7,7 +7,6 @@ const appRoutes: Routes = [
     path: '',
     component: PagePrestationsComponent,
     data: { title: 'Prestations', subtitle: 'Toutes les prestations' }
-
   }
 ];
 

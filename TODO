@@ -1,0 +1,5 @@
+Todo:
+  db.json
+  clientService
+  page clients : ts et html (utliser template-b, utiliser la meme directive state)
+  meme bouton
