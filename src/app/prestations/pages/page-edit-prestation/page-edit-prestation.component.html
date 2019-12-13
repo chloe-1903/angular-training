@@ -1,0 +1,4 @@
+<div class="container" *ngIf="editedPrestation$ | async as item">
+    <app-form-prestation [init]="item" (submitted)="update($event)">
+    </app-form-prestation>
+</div>

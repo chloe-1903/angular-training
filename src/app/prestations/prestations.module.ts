@@ -6,9 +6,10 @@ import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add
 import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
 import { PrestationsRoutingModule } from './prestations-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageEditPrestationComponent } from './pages/page-edit-prestation/page-edit-prestation.component';
 
 @NgModule({
-  declarations: [PagePrestationsComponent, PageAddPrestationComponent, FormPrestationComponent],
+  declarations: [PagePrestationsComponent, PageAddPrestationComponent, FormPrestationComponent, PageEditPrestationComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,

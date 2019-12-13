@@ -38,9 +38,15 @@ export class PrestationsService {
     this.collection$ = col;
   }
 
-  public update(prestation: Prestation, state: State): Observable<any> {
+  public getItemById(id: string): Observable<any> {
+    return this.http.get(`${this.urlApi}prestations/${id}`);
+  }
+
+  public update(prestation: Prestation, state?: State): Observable<any> {
     const obj = {...prestation}; // destructuring to avoid modifying prestation.state
-    obj.state = state;
+    if (state) {
+      obj.state = state;
+    }
     return this.http.patch(`${this.urlApi}prestations/${obj.id}`, obj);
   }
 }

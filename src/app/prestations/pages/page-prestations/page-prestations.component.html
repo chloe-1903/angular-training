@@ -1,7 +1,7 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
   <app-tableau-light [headers]="headers">
     <!-- projection dans ng-content de app-tableau-->
-    <tr *ngFor="let prestation of collection$ | async">
+    <tr *ngFor="let prestation of collection$ | async" (click)="openEditPresta(prestation)">
       <td>{{prestation.typePresta}}</td>
       <td>{{prestation.client}}</td>
       <td>{{prestation.nbJours}}</td>
@@ -9,7 +9,7 @@
       <td>{{prestation | total | currency:'EUR'}}</td>
       <td>{{prestation | total: true  | currency:'EUR'}}</td>
       <td [appState]="prestation.state">
-        <select (change)="changeState(prestation, $event)">
+        <select (change)="changeState(prestation, $event)" (click)="$event.stopPropagation()">
           <option *ngFor="let state of states | keyvalue" [value]="state.value"
             [selected]="state.value === prestation.state">{{state.value}}</option>
         </select>

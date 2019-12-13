@@ -4,7 +4,7 @@
       "id": 1,
       "typePresta": "formation",
       "client": "Modis",
-      "nbJours": 10,
+      "nbJours": 15,
       "tva": 20,
       "tjmht": 800,
       "state": "Confirmé"
@@ -13,7 +13,7 @@
       "id": 2,
       "typePresta": "coaching",
       "client": "Capgemini",
-      "nbJours": 15,
+      "nbJours": 99,
       "tva": 20,
       "tjmht": 900,
       "state": "Option"

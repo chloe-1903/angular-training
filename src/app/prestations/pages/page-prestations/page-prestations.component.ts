@@ -3,7 +3,8 @@ import { PrestationsService } from '../../services/prestations.service';
 import { Observable, Subscription } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PrestationI } from 'src/app/shared/interfaces/prestation-i';
 
 @Component({
   selector: 'app-page-prestations',
@@ -27,7 +28,7 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   // private subscription: Subscription;
 
 
-  constructor(private ps: PrestationsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private ps: PrestationsService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   public changeState(item: Prestation, event) {
     this.ps.update(item, event.target.value).subscribe((response: Prestation) => {
@@ -38,6 +39,10 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   public popIn() {
     console.log('generate pop-in with a service');
     // we could use a service displaying a ng-bootstrap pop-in here
+  }
+
+  openEditPresta(prestation: Prestation) {
+    this.router.navigate([`prestations/edit/${prestation.id}`]);
   }
 
   ngOnInit() {
