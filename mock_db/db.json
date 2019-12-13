@@ -35,6 +35,15 @@
       "client": "efzefz",
       "state": "Option",
       "id": 4
+    },
+    {
+      "typePresta": "ezfze",
+      "nbJours": 1,
+      "tva": 20,
+      "tjmht": 1500,
+      "client": "d",
+      "state": "Option",
+      "id": 5
     }
   ],
   "clients": [
