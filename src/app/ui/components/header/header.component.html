@@ -1,4 +1,6 @@
 <h1>
-    <img src="../../../../assets/tree.png"/>
-    {{title}}
+    <img src="../../../../assets/img/tree.png"/>
+    {{title}} v.{{vs.version}}
+    <span *ngIf="version$ | async as vers"> -
+      {{vers}} <img src="../../../../assets/img/like.png"/></span>
 </h1>

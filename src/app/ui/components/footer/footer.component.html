@@ -1,1 +1,6 @@
-<p>{{copyright}}</p>
+<p>{{copyright}} - v.{{vs.version}}
+    <span *ngIf="version$ | async as vers"> -
+        {{vers}}
+        <img *ngFor='let i of versionTable$ | async' src="../../../../assets/img/like.png"/>
+    </span>
+</p>
